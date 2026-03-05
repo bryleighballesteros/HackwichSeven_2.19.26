@@ -9,21 +9,26 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var tobLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    var currentIndex = 0
+    var favoriteFoodsArray: [String] = ["Pizza", "Pasta", "Sushi", "Tacos", "Burger"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tobLabel.text = "My Favorite Foods"
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func buttonPressed(_ sender: Any) {
+        //code block
+        bottomLabel.text = favoriteFoodsArray[currentIndex]
+        currentIndex = currentIndex + 1
     }
-    */
+    
 
 }

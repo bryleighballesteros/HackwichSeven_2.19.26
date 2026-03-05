@@ -9,13 +9,23 @@ import UIKit
 
 class ThirdViewController: UIViewController {
 
+    @IBOutlet weak var topLabel: UILabel!
+    @IBOutlet weak var bottomLabel: UILabel!
+    var currentIndex = 0
+    var favoriteMoviesArray: [String] = ["Beauty & The Beast", "Tangled", "Frozen", "Encanto", "Cinderella"]
     override func viewDidLoad() {
         super.viewDidLoad()
+        topLabel.text = "My Favorite Movies"
+        bottomLabel.text = " "
 
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func movieButton(_ sender: Any) {
+        bottomLabel.text = favoriteMoviesArray[currentIndex]
+        currentIndex = currentIndex + 1
+    }
     /*
     // MARK: - Navigation
 
